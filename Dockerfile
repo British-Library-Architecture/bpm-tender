@@ -1,5 +1,5 @@
 # Set nginx base image
-FROM openresty/openresty:trusty
+FROM openresty/openresty:xenial
 
 # File Author / Maintainer
 MAINTAINER Guy Wicks
