@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -y \
   redis-server
 
 # Copy custom configuration file from the current directory
-COPY nginx.conf /etc/nginx/nginx.conf
+COPY nginx/nginx.conf /etc/nginx/nginx.conf
+COPY nginx/default /etc/nginx/conf.d/default
 
-EXPOSE 80:8080
+EXPOSE 8080:8080
