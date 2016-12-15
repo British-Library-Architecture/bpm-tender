@@ -14,7 +14,7 @@ sudo apt-get install git
 ```
 git clone https://github.com/British-Library-Architecture/bpm-tender.git
 cd bpm-tender
-chmod a+x bin/docker-build
+chmod a+x bin/*
 bin/docker-build
 ```  
 ## Docker build
