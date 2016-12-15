@@ -7,7 +7,7 @@ LABEL bpm-api.bl.uk.version="0.0.1 alpha"
 LABEL bpm-api.bl.uk.staus="alpha"
 
 # Install packages
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install --no-install-recommends --no-install-suggests -y \
   redis-server \
   nginx-full
 
