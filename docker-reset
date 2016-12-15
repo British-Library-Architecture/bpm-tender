@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Delete all the docker images. Everything will have to be "built" again.
+# But you do free up all your lost disk space!
+
+docker rmi $(docker images -q)
