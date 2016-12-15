@@ -1,9 +1,11 @@
 # bpm-tender
 Resources for the British Library BPM tender (2017) technical demonstration
 
-# Docker Build
+# Use your own Docker environment
 Using your flavour of linux (Ubuntu 16.04 and Mac OSX has been tested), install docker and git:
-https://docs.docker.com/engine/installation/linux/ubuntulinux/
+Install docker: https://docs.docker.com/engine/installation/linux/ubuntulinux/
+
+Install git:
 ``` 
 sudo apt-get install git
 ```
@@ -15,11 +17,11 @@ $ cd bpm-tender
 $ chmod a+x docker-build
 $ ./docker-build
 ```  
-# Docker build
+## Docker build
 The docker build is based on Ubuntu 16.04 LTS with nginx/openresty webserver with an embedded Redis service
 The container exposes port 8080 can can be accessed locally via `curl`
 
-# Docker execution
+## Docker execution
 ```
 docker 
 
