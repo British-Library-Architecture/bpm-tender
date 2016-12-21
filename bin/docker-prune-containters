@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Remove all exited containers (you loose state!)
+
+docker rm `docker ps -a -f "status=exited" -q`

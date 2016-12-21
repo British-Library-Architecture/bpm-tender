@@ -1,0 +1,6 @@
+SET guy wicks
+SET hello world
+SET gwicks "GUY WICKS"
+
+SCAN 0
+exit

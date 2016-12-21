@@ -1,0 +1,7 @@
+#!/bin/bash
+
+docker rm test
+docker rmi test
+docker build -t gwicks:redis .
+#docker run --name test test
+

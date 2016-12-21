@@ -1,10 +1,17 @@
 nginx:
-    build: ./docker-nginx
+#    build: ./docker-nginx
+    build: ./docker-nginx-alpine
     links:
         - node1:node1
     ports:
         - "8000:80"
 node1:
-    build: ./docker-node
+    build: ./docker-node-alpine
+    links:
+        - redis1:redis1
     ports:
         - "8080"
+redis1:
+    build: ./docker-redis-alpine
+    ports:
+        - "6379"
