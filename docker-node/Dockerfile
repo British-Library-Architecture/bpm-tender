@@ -1,4 +1,4 @@
-FROM node:argon-alpine
+FROM node:argon
 
 ARG http_proxy=http://194.66.238.27:7070/
 ARG https_proxy=http://194.66.238.27:7070/
