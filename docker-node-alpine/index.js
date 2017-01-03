@@ -1,7 +1,8 @@
 // index.js
 'use strict';
 
-const PORT = 8080;
+//const PORT = 8080;
+const PORT = process.env.npm_package_config_port;
 
 console.log('Starting application');
 
