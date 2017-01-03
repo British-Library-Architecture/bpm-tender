@@ -1,0 +1,21 @@
+{
+  "result": {
+    "sort_code": "200415",
+    "account": "38290008",
+    "iban": "GB37BARC20041538290008",
+    "country": "GB",
+    "bank_name": "BARCLAYS BANK PLC",
+    "bank_bic": "BARCGB2108L",
+    "chaps_bic": "BARCGB22",
+    "bank_address": "Dept AC Barclaycard House",
+    "bank_city": "Northampton",
+    "bank_postalcode": "NN4 7SG",
+    "bank_phone": "01604 234234",
+    "direct_debits": "NO",
+    "pfs_payments": "YES",
+    "chaps": "YES",
+    "bacs": "YES",
+    "ccc_payments": "NO"
+  }
+}
+
