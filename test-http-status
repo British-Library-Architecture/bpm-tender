@@ -2,6 +2,7 @@
 
 SITE=$1
 TEST=$2
+METHOD=${3:-GET}
 
 TIME=/usr/bin/time
 TIME_TMP=/tmp/check-site-time.txt
@@ -14,16 +15,16 @@ SITE_CURL=/tmp/check.tmp
 
 ERROR_404="Page not found"
 
-$TIME -v -o $TIME_TMP curl -sILN  --stderr - $1 > $SITE_CURL;
+$TIME -v -o $TIME_TMP curl -sILNX $METHOD  --stderr - $1 > $SITE_CURL;
 SITE_STATUS=$(cat $SITE_CURL | grep HTTP | tail -n 1)
 
-
-#if [[ $SITE_STATUS =~ 200|301|302 ]]
 if [[ $SITE_STATUS =~ $TEST ]]
 then
-    echo -e "$SITE - ${GREEN}Passed${NC}";
+    echo -e "${GREEN}Passed${NC} - $SITE - $SITE_STATUS";
 else
-    echo -e "$SITE - ${RED}Failed${NC} Expected: $TEST Result: ${RED}$SITE_STATUS${NC}";
+    echo -e "${RED}Failed${NC} - $SITE";
+    echo -e "Expected: $TEST";
+    echo -e "Result:   $SITE_STATUS";
     cat $SITE_CURL
 fi
 
