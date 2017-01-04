@@ -9,7 +9,7 @@ HTTP_404 = "HTTP/1.1 404"
 
 CURL = curl -siL
 GREP = grep
-HTTP_TEST = /bin/bash ./test-http-status
+HTTP_TEST = /bin/bash ./bin/test-http-status
 
 test: test-api test-bankaccount test-identity
 	@echo ">>> Test complete"
