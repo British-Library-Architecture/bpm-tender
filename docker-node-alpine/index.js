@@ -2,11 +2,12 @@
 'use strict';
 
 //const PORT = 8080;
-const PORT    = process.env.npm_package_config_port;
+const PORT    = process.env.npm_package_config_port || 8080;
 const express = require('express');
 const app     = module.exports = express();
 
 global.HTTPStatus = require('http-status-codes');
+global.eyes       = require('eyes').inspector({ maxLength: 1024*32 });
 
 //
 console.log('Starting application');

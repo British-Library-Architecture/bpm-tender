@@ -15,11 +15,14 @@
   "dependencies": {
     "express": "^4.13.3",
     "express-validator": "^3.1.2",
-    "http-status-codes": "*",
+    "eyes": "",
+    "http-status-codes": "",
     "body-parser": "^1.15.2",
     "redis": "^2.6.3",
     "request": "^2.79.0",
     "sha.js": "^2.4.8",
-    "xml2js": "^0.4.17"
+    "xml2js": "^0.4.17",
+    "xmldom": "",
+    "xpath": ""
   }
 }
