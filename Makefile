@@ -27,11 +27,11 @@ test-bankaccount:
 
 test-identity:
 	$(HTTP_TEST) $(HOST)/api/v1/identity                    $(HTTP_200)
-	$(HTTP_TEST) $(HOST)/api/v1/identity/gwicks             $(HTTP_200)
-	$(HTTP_TEST) $(HOST)/api/v1/identity/gwicks/secret1234  $(HTTP_200)
+#	$(HTTP_TEST) $(HOST)/api/v1/identity/gwicks             $(HTTP_200)
+#	$(HTTP_TEST) $(HOST)/api/v1/identity/gwicks/secret1234  $(HTTP_200)
 
 	$(HTTP_TEST) $(HOST)/api/v1/identity/baduser            $(HTTP_404)
-	$(HTTP_TEST) $(HOST)/api/v1/identity/gwicks/badpassword $(HTTP_404)
+#	$(HTTP_TEST) $(HOST)/api/v1/identity/gwicks/badpassword $(HTTP_404)
 
 	$(HTTP_TEST) $(HOST)/api/v1/identity/newuser/secret1234 $(HTTP_201) POST
 	$(HTTP_TEST) $(HOST)/api/v1/identity/newuser            $(HTTP_200)

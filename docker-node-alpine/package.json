@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "Node.js on Docker",
   "author": "Guy Wicks guy.wicks@bl.uk",
+  "license": "MIT",
+  "repository": "github.com:British-Library-Architecture/bpm-tender.git",
   "main": "server.js",
   "scripts": {
     "start": "node ."
@@ -13,6 +15,13 @@
   "dependencies": {
     "express": "^4.13.3",
     "redis": "^2.6.3",
+    "sha.js": "^2.4.8",
     "xml2js": "^0.4.17"
+  },
+  "devDependencies": {
+    "eslint": "^3.12.2",
+    "eslint-config-airbnb-base": "^11.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-react": "^6.8.0"
   }
 }
