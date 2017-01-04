@@ -10,21 +10,30 @@ Install git:
 sudo apt-get install git
 ```
 
-## Clone the respository and build the docker container
+## Clone and setup the respository
 ```
 git clone https://github.com/British-Library-Architecture/bpm-tender.git
 cd bpm-tender
 chmod a+x bin/*
-bin/docker-build
 ```  
 ## Docker build
-The docker build is based on Ubuntu 16.04 LTS with nginx/openresty webserver with an embedded Redis service
-The container exposes port 8080 can can be accessed locally via `curl`
+The docker build uses docker-compose to create an nginx front end proxy and webserver, nodejs middleware and a redis datastore
+The container exposes port 8000 can can be accessed locally via `curl localhost:8000`
+Local documentation can be accessed from a browser via http://localhost:8000/api
 
 ## Docker execution
 ```
-docker 
+docker-compose build
+docker-compose up
 
 ## Examples
 ```
-curl 
+curl localhost:8000/api/v1/bankaccount/200415
+curl localhost:8000/api/v1/identity/newuser
+
+### Makefile
+A makefile exists that can run a series of tests on the container:
+```
+cd bpm-tender
+make
+
