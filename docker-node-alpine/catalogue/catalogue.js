@@ -17,7 +17,7 @@ const expressValidator  = require('express-validator');
 const bodyParser        = require('body-parser');
 
 
-//
+// Initialise express-validator
 app.use(bodyParser.json());
 app.use(expressValidator());
 
@@ -59,7 +59,7 @@ app.get('/isbn/:isbn', function(req, res) {
       return;
     }
 
-    // Call the XService
+    // Call the Catalogue XService
     // Returns XML in body.
     console.log('Catalogue service request:', CATALOG_URI + '/isbn/' + isbn);
 
