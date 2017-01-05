@@ -1,11 +1,11 @@
 {
-  "name": "docker_web_app",
+  "name": "BL-Service",
   "version": "1.0.0",
   "description": "Node.js on Docker",
   "author": "Guy Wicks guy.wicks@bl.uk",
   "license": "MIT",
   "repository": "github.com:British-Library-Architecture/bpm-tender.git",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "start": "node ."
   },

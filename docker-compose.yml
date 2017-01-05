@@ -1,5 +1,4 @@
 nginx:
-#    build: ./docker-nginx
     build: ./docker-nginx-alpine
     links:
         - node1:node1
