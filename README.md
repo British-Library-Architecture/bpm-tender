@@ -6,8 +6,8 @@ Ubuntu 16.04 and Mac OSX have been tested.
 
 Install docker:
 
-* Ubuntu: https://docs.docker.com/engine/installation/mac
-* OSX: https://docs.docker.com/engine/installation/linux/ubuntulinux/
+* Ubuntu: https://docs.docker.com/engine/installation/linux/ubuntulinux/
+* OSX: https://docs.docker.com/engine/installation/mac
 * RHEL7: https://docs.docker.com/engine/installation/linux/rhel/
 
 Install git:
