@@ -4,7 +4,8 @@ Resources for the British Library BPM tender (2017) technical demonstration
 # Use your own Docker environment
 Using your flavour of linux (Ubuntu 16.04 and Mac OSX has been tested), install docker and git:
 
-Install docker: https://docs.docker.com/engine/installation/linux/ubuntulinux/
+Install docker (Ubuntu): https://docs.docker.com/engine/installation/mac
+Install docker (OSX): https://docs.docker.com/engine/installation/linux/ubuntulinux/
 
 Install git:
 ``` 
