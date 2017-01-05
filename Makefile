@@ -1,7 +1,7 @@
 .SILENT:
 .PHONY: default clean
 
-HOST = localhost
+HOST = localhost:8000
 
 HTTP_200 = "HTTP/1.1 200"
 HTTP_201 = "HTTP/1.1 201"
@@ -56,6 +56,7 @@ stop: stop-docker
 stop-docker:
 	$(info Stopping containers)
 	docker-compose down
+	-@docker rmi $(docker images -aqf dangling=true)  >/dev/null 2>&1
 
 #
 # Clean
@@ -85,17 +86,18 @@ reset:
 #
 help:
 	$(info Help and instructions:)
-	$(info - Use 'make install' to setup the scripts)
-	$(info - Use 'make build'   to generate the docker images. Will download images if required.)
-	$(info - Use 'make start'   to start the docker container services)
-	$(info - Use 'make test'    to run the test suite against the services)
-	$(info - Use 'make stop'    to stop and cleanup the container services)
-	$(info - Use 'make rebuild' to stop, build, start and test services)
+	$(info - Use 'make install'  to setup the scripts)
+	$(info - Use 'make build'    to generate the docker images. Will download images if required.)
+	$(info - Use 'make start'    to start the docker container services)
+	$(info - Use 'make test'     to run the test suite against the services)
+	$(info - Use 'make stop'     to stop and cleanup the container services)
+	$(info - Use 'make rebuild'  to stop, build, start and test services)
 	$(info Advanced:)
-	$(info - Use 'make purge'   to delete docker containers and images. Make build will be required)
-	$(info - Use 'make clean'   to clean any temp files and test data )
-	$(info - Use 'make load'    to reload any test data)
-	$(info - Use 'make reset'   to fully reset the environment)
+	$(info - Use 'make purge'    to delete docker containers and images. Make build will be required)
+	$(info - Use 'make clean'    to clean any temp files and test data )
+	$(info - Use 'make load'     to reload any test data)
+	$(info - Use 'make reset'    to fully reset the environment)
+	$(info - Use 'make showlogs' to export to STDOUT the container log files)
 
 #
 # Test harness
