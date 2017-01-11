@@ -3,6 +3,9 @@ FROM node:alpine
 ARG http_proxy=http://194.66.238.27:7070/
 ARG https_proxy=http://194.66.238.27:7070/
 
+#ARG http_proxy
+#ARG https_proxy
+
 # Create app directory
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app

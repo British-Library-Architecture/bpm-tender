@@ -1,17 +1,31 @@
-nginx:
-    build: ./docker-nginx-alpine
-    links:
+version: '2'
+services:
+  nginx:
+    build: 
+      "./docker-nginx-alpine"
+    links: 
         - node1:node1
-    ports:
+        - portainer:portainer
+    ports: 
         - "80:80"
         - "8000:80"
-node1:
-    build: ./docker-node-alpine
+  node1:
+    build: 
+      context: ./docker-node-alpine
     links:
         - redis1:redis1
     ports:
         - "8080"
-redis1:
-    build: ./docker-redis-alpine
+  redis1:
+    build: 
+        ./docker-redis-alpine
     ports:
         - "6379"
+  portainer:
+    image: 
+      portainer/portainer
+    ports:
+        - "9000:9000"
+    volumes:
+        - /var/run/docker.sock:/var/run/docker.sock
+        - ./data:/data
