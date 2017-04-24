@@ -127,38 +127,40 @@ test: test-api test-bankaccount test-identity test-catalogue
 
 test-api:
 	@echo ">>> Test: $@"
-	$(HTTP_TEST) $(HOST)/api     $(HTTP_200)
-	$(HTTP_TEST) $(HOST)/api/v1  $(HTTP_403)
+	$(HTTP_TEST) $(HOST)/api                                      $(HTTP_200)
+	$(HTTP_TEST) $(HOST)/api/v1                                   $(HTTP_403)
 	@echo ">>> Complete: $@"
 
 test-bankaccount:
 	@echo ">>> Test: $@"
-	$(HTTP_TEST) $(HOST)/api/v1/bankaccount                 $(HTTP_200)
-	$(HTTP_TEST) $(HOST)/api/v1/bankaccount/200415          $(HTTP_200)
-	$(HTTP_TEST) $(HOST)/api/v1/bankaccount/200415/38290008 $(HTTP_200)
-	$(HTTP_TEST) $(HOST)/api/v1/bankaccount/200415/38290009 $(HTTP_404)
+	$(HTTP_TEST) $(HOST)/api/v1/bankaccount                       $(HTTP_200)
+	$(HTTP_TEST) $(HOST)/api/v1/bankaccount/200415                $(HTTP_403)
+	$(HTTP_TEST) $(HOST)/api/v1/bankaccount/200415/38290008       $(HTTP_200)
+	$(HTTP_TEST) $(HOST)/api/v1/bankaccount/200415/38290008.json  $(HTTP_200)
+	$(HTTP_TEST) $(HOST)/api/v1/bankaccount/200415/38290008.xml   $(HTTP_200)
+	$(HTTP_TEST) $(HOST)/api/v1/bankaccount/200415/38290009       $(HTTP_404)
 	@echo ">>> Complete: $@"
 
 test-identity:
 	@echo ">>> Test: $@"
-	$(HTTP_TEST) $(HOST)/api/v1/identity                    $(HTTP_200)
+	$(HTTP_TEST) $(HOST)/api/v1/identity                          $(HTTP_200)
 
-	$(HTTP_TEST) $(HOST)/api/v1/identity/baduser            $(HTTP_404)
+	$(HTTP_TEST) $(HOST)/api/v1/identity/baduser                  $(HTTP_404)
 
-	$(HTTP_TEST) $(HOST)/api/v1/identity/newuser/secret1234 $(HTTP_201) POST
-	$(HTTP_TEST) $(HOST)/api/v1/identity/newuser            $(HTTP_200)
-	$(HTTP_TEST) $(HOST)/api/v1/identity/newuser/secret1234 $(HTTP_200)
-	$(HTTP_TEST) $(HOST)/api/v1/identity/newuser/wrong      $(HTTP_404)
+	$(HTTP_TEST) $(HOST)/api/v1/identity/newuser/secret1234       $(HTTP_201) POST
+	$(HTTP_TEST) $(HOST)/api/v1/identity/newuser                  $(HTTP_200)
+	$(HTTP_TEST) $(HOST)/api/v1/identity/newuser/secret1234       $(HTTP_200)
+	$(HTTP_TEST) $(HOST)/api/v1/identity/newuser/wrong            $(HTTP_404)
 	@echo ">>> Complete: $@"
 
 test-catalogue:
 	@echo ">>> Test: $@"
-	$(HTTP_TEST) $(HOST)/api/v1/catalogue                     $(HTTP_200)
-	$(HTTP_TEST) $(HOST)/api/v1/catalogue/isbn                $(HTTP_404)
-	$(HTTP_TEST) $(HOST)/api/v1/catalogue/isbn/               $(HTTP_404)
-	$(HTTP_TEST) $(HOST)/api/v1/catalogue/isbn/12345678       $(HTTP_404)
-	$(HTTP_TEST) $(HOST)/api/v1/catalogue/isbn/9780224063784  $(HTTP_200)
-	$(HTTP_TEST) $(HOST)/api/v1/catalogue/isbn/ABCDEFG        $(HTTP_400)
+	$(HTTP_TEST) $(HOST)/api/v1/catalogue                         $(HTTP_200)
+	$(HTTP_TEST) $(HOST)/api/v1/catalogue/isbn                    $(HTTP_404)
+	$(HTTP_TEST) $(HOST)/api/v1/catalogue/isbn/                   $(HTTP_404)
+	$(HTTP_TEST) $(HOST)/api/v1/catalogue/isbn/12345678           $(HTTP_404)
+	$(HTTP_TEST) $(HOST)/api/v1/catalogue/isbn/9780224063784      $(HTTP_200)
+	$(HTTP_TEST) $(HOST)/api/v1/catalogue/isbn/ABCDEFG            $(HTTP_400)
 	@echo ">>> Complete: $@"
 
 

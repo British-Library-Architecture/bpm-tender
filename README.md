@@ -9,6 +9,10 @@ Install docker:
 * Ubuntu: https://docs.docker.com/engine/installation/linux/ubuntulinux/
 * OSX: https://docs.docker.com/engine/installation/mac
 * RHEL7: https://docs.docker.com/engine/installation/linux/rhel/
+Note: RedHat 6 is not supported
+
+Install docker-compose:
+* Ubuntu: https://docs.docker.com/compose/install/
 
 Install git:
 * Ubuntu: `sudo apt-get install git`
@@ -49,6 +53,10 @@ redis1:
 ```
 
 For example, if port 80 clashes with an existing service then it can be removed. Port 8000 is used by the `make test` script so any changes to this port will need to be reflected in the `Makefile`
+
+Example of a binding error:
+> ERROR: for nginx  Cannot start service nginx: driver failed programming external connectivity on endpoint bpmtender_nginx_1 (6ea224067468364d047b8b6a3d910142376e5b21f7eea0de022d1fb7b15251a5): Error starting userland proxy: listen tcp 0.0.0.0:80: bind: address already in use
+
 
 For example:
 ```
