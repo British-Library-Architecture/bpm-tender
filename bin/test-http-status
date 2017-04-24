@@ -15,7 +15,8 @@ SITE_CURL=/tmp/check.tmp
 
 ERROR_404="Page not found"
 
-$TIME -v -o $TIME_TMP curl -sILNX $METHOD  --stderr - $1 > $SITE_CURL;
+#$TIME -v -o $TIME_TMP curl -sILNX $METHOD  --stderr - $1 > $SITE_CURL;
+curl -sILNX $METHOD  --stderr - $1 > $SITE_CURL;
 SITE_STATUS=$(cat $SITE_CURL | grep HTTP | tail -n 1)
 
 if [[ $SITE_STATUS =~ $TEST ]]
@@ -29,5 +30,5 @@ else
 fi
 
 rm $SITE_CURL
-rm $TIME_TMP
+#rm $TIME_TMP
 

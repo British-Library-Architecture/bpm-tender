@@ -1,7 +1,7 @@
 FROM node:alpine
 
-ARG http_proxy=http://194.66.238.27:7070/
-ARG https_proxy=http://194.66.238.27:7070/
+#ARG http_proxy=http://194.66.238.27:7070/
+#ARG https_proxy=http://194.66.238.27:7070/
 
 # Create app directory
 RUN mkdir -p /usr/src/app
@@ -12,7 +12,7 @@ COPY package.json /usr/src/app/
 RUN npm install
 
 # Bundle app source
-COPY . /usr/src/app
+COPY ./app /usr/src/app
 
 EXPOSE 8080
 CMD [ "npm", "start" ]

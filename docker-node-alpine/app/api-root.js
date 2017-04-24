@@ -20,8 +20,8 @@ const Resource = function() {
                 response.on('end', () => {
               //      const parsed = JSON.parse(body);
               //      res.json(parsed);
-		    res = body;	
-                    next();
+		          res = body;	
+                  next();
                 });
             });
     });
