@@ -15,12 +15,12 @@ services:
     links:
         - redis1:redis1
     ports:
-        - "8080"
+        - "8080:8080"
   redis1:
     build: 
         ./docker-redis-alpine
     ports:
-        - "6379"
+        - "6379:6379"
   portainer:
     image: 
       portainer/portainer

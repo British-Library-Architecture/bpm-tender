@@ -1,4 +1,4 @@
-IMAGE_NAME = gwicks/node:dev
+IMAGE_NAME = bpmtender_node1:latest 
 CONTAINER_NAME = node-test
 PRIVATE_PORT = 8080
 PUBLIC_PORT = 8080
