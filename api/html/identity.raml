@@ -1,0 +1,93 @@
+#%RAML 1.0
+---
+title: Identity (Simple)
+baseUri: http://bpmn-api.northeurope.cloudapp.azure.com/api/v1/
+version: v1 (draft)
+
+/identity:
+  description: Identity resource
+  get:
+    description: Check the status of the identity service
+    responses: 
+      200:
+        description: Service available and operating normally
+        body:
+          application/json:
+            example: |
+              {
+                "status": "OK"
+              }
+      202:
+        description: Service available, but some services may be unavailable
+        body:
+          application/json:
+            example: |
+              {
+                "status": "SERVICE DEGRADED"
+              }
+      404:
+        description: Service not available
+        body:
+          application/json:
+            example: |
+              {
+                "status": "SERVICE DOWN"
+              }
+          
+  post:
+    description: The POST operation creates an identity
+    body:
+      application/json:
+        example:
+          {
+            "identity": "username",
+            "secret": "password"
+          }
+    responses:
+      201:
+        description: Identity created
+      202:
+        description: Identity creation pending
+      406:
+        description: Not accpeted
+
+  /{identity}:
+    description: Check existance of an identity
+    get:
+      description: 
+      responses: 
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                  status: "OK"
+                }
+
+  /{identity}/{secret}:
+    description: d
+    get:
+      description: g
+      responses: 
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                  "result": {
+                    "sort_code": "200415",
+                    "country": "GB",
+                    "bank_name": "BARCLAYS BANK PLC",
+                    "bank_bic": "BARCGB2108L",
+                    "chaps_bic": "BARCGB22",
+                    "bank_address": "Dept AC Barclaycard House",
+                    "bank_city": "Northampton",
+                    "bank_postalcode": "NN4 7SG",
+                    "bank_phone": "01604 234234",
+                    "direct_debits": "NO",
+                    "pfs_payments": "YES",
+                    "chaps": "YES",
+                    "bacs": "YES",
+                    "ccc_payments": "NO"
+                  }
+                }

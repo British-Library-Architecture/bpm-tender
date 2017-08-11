@@ -21,6 +21,8 @@ const bodyParser        = require('body-parser');
 app.use(bodyParser.json());
 app.use(expressValidator());
 
+console.log('catalogue/catalogue.js');
+
 
 /**
  * Check the service is working

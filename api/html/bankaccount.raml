@@ -1,0 +1,65 @@
+#%RAML 1.0
+---
+title: Bank details
+baseUri: http://bpmn-api.northeurope.cloudapp.azure.com/api/v1/
+version: v1 (draft)
+documentation: 
+  - title: Bank account service
+    content: content
+
+/bankaccount:
+  description: bankaccount
+  /{sortcode}:
+    description: d
+    get:
+      description: g
+      responses: 
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                  "result": {
+                    "sort_code": "200415",
+                    "country": "GB",
+                    "bank_name": "BARCLAYS BANK PLC",
+                    "bank_bic": "BARCGB2108L",
+                    "chaps_bic": "BARCGB22",
+                    "bank_address": "Dept AC Barclaycard House",
+                    "bank_city": "Northampton",
+                    "bank_postalcode": "NN4 7SG",
+                    "bank_phone": "01604 234234",
+                    "direct_debits": "NO",
+                    "pfs_payments": "YES",
+                    "chaps": "YES",
+                    "bacs": "YES",
+                    "ccc_payments": "NO"
+                  }
+                }
+  /{sortcode}/{bankaccount}:
+    description: d
+    get:
+      description: g
+      responses: 
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                  "result": {
+                    "sort_code": "200415",
+                    "country": "GB",
+                    "bank_name": "BARCLAYS BANK PLC",
+                    "bank_bic": "BARCGB2108L",
+                    "chaps_bic": "BARCGB22",
+                    "bank_address": "Dept AC Barclaycard House",
+                    "bank_city": "Northampton",
+                    "bank_postalcode": "NN4 7SG",
+                    "bank_phone": "01604 234234",
+                    "direct_debits": "NO",
+                    "pfs_payments": "YES",
+                    "chaps": "YES",
+                    "bacs": "YES",
+                    "ccc_payments": "NO"
+                  }
+                }
