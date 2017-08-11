@@ -75,7 +75,8 @@ stop: stop-docker
 stop-docker:
 	$(info Stopping containers)
 	docker-compose down
-	-@docker rmi $(docker images -aqf dangling=true)  >/dev/null 2>&1
+#	-@docker rmi $(docker images -aqf dangling=true)  >/dev/null 2>&1
+	docker system prune --force
 
 #
 # Clean
