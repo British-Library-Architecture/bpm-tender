@@ -26,7 +26,7 @@ client.on('connect', function() {
  * Check the service is working
  */
 app.get('/', function(req, res) {
-  res.send('OK');
+  res.json({ service: 'identity', status: 'OK' });
 });
 
 
