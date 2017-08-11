@@ -1,6 +1,6 @@
-// identity/index.js
+// catalog/index.js
 'use strict';
 
-console.log('catalogue/index.js');
+console.log('Registering route /catalogue');
 
 module.exports = require('./catalogue');

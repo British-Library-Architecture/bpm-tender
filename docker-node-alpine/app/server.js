@@ -10,7 +10,7 @@ global.HTTPStatus = require('http-status-codes');
 global.eyes       = require('eyes').inspector({ maxLength: 1024*32 });
 
 //
-console.log('Starting application');
+console.log('Starting service endpoints');
 
 // Register the services
 app.use('/api/v1/identity', require('./identity'));
