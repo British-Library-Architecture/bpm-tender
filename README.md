@@ -73,6 +73,13 @@ make test
 make stop
 ```
 
+## Sample ISBN's
+
+http://bpmn-api.northeurope.cloudapp.azure.com/api/v1/catalogue/isbn/9781409590330
+
+http://bpmn-api.northeurope.cloudapp.azure.com/api/v1/catalogue/isbn/9781409595380
+
+
 ### Example 
 Note: The JSON output has been prettified.
 ```
