@@ -63,12 +63,13 @@ rebuild: stop build start
 #
 # Start / Stop
 #
-start: start-docker test
+start: start-docker
 
 start-docker:
 	$(info Starting containers)
-	nohup docker-compose up &
-	sleep 3
+#	nohup docker-compose up &
+	docker-compose up
+#	sleep 3
 
 stop: stop-docker
 

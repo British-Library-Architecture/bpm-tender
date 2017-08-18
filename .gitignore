@@ -1,3 +1,4 @@
 *.flag
 data/portainer.db
 */node_modules
+nohup.out
