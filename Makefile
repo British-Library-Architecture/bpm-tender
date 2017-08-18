@@ -67,7 +67,7 @@ start: start-docker test
 
 start-docker:
 	$(info Starting containers)
-	docker-compose up &
+	nohup docker-compose up &
 	sleep 3
 
 stop: stop-docker
