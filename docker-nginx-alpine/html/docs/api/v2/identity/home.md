@@ -30,5 +30,4 @@ OK
 Status code|Result
 ---|---
 200|OK - `/identity` service available
-403|Error - forbidden
 500 or timeout|Error - `/identity` service failure. Not available

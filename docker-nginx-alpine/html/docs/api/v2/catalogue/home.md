@@ -30,5 +30,4 @@ OK
 Status code|Result
 ---|---
 200|OK - `/catalogue` service available
-403|Error - forbidden
 500 or timeout|Error - `/catalogue` service failure. Not available
