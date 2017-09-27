@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BPM Demo Documentation</title>
+        <meta http-equiv="refresh" content="0;URL='/docs'" />  
+    </head>
+<body>
+        <h1>API</h1>
+
+        <dt><a href="/api/v1/bankaccount/200415">GET /api/v1/bankaccount/&lt;sortcode&gt;</a></dt>
+        <dd>Return the details of a &lt;sortcode&gt; for the bank
+                <ul><b>Status codes</b>
+                        <li>200 / OK - Status normal</li>
+                        <li>404 / ERROR - Sortcode not known</li>
+                </ul>
+        </dd>
+
+        <dt><a href="/api/v1/bankaccount/200415/38290008">GET /api/v1/bankaccount/&lt;sortcode&gt;/&lt;bankaccount&gt;</a></dt>
+        <dd>Return the details of a &lt;sortcode&gt; and &lt;bankaccount&gt; combination
+                <ul><b>Status codes</b>
+                        <li>200 / OK - Status normal</li>
+                        <li>404 / ERROR - Sortcode or Bankacount not found</li>
+                </ul>
+        </dd>
+
+        <!--
+<dt><a href="/api/v1/redis">GET /api/v1/redis</a></dt>
+<dd>Return the key/value of the redis store [debugging only].
+        <ul><b>Status codes</b>
+        <li>200 / OK - Status normal</li>
+        <li>200 / FAIL - Identified problem with service</li>
+        <li>404 / FAIL - Identified problem with service</li>
+        </ul>
+</dd>
+-->
+
+        <dt><a href="/api/v1/identity">GET /api/v1/identity</a></dt>
+        <dd>Return the status of the identity provider.
+                <ul><b>Status codes</b>
+                        <li>200 / OK - Status normal</li>
+                        <li>404 / FAIL - Identity not found</li>
+                </ul>
+        </dd>
+
+        <dt><a href="/api/v1/catalogue/isbn/">GET /api/v1/catalogue/isbn/</a></dt>
+        <dd>Return details of a monograph by ISBN number
+                <ul><b>Status codes</b>
+                        <li>200 / OK - Status normal</li>
+                        <li>404 / FAIL - Monograph not found</li>
+                </ul>
+
+                <dd>Test <a href="/api/v1/catalogue/isbn/9780224063784">GET /api/v1/catalogue/isbn/9780224063784</a></dd>
+        </dd>
+
+</body>
+
+</html>
