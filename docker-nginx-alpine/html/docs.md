@@ -1,7 +1,7 @@
 [home](/home)
 
 ### Update - 27 Sept 2017
-New version 2 of `/bankaccount` available to support correct `content-type` headers for XML and JSON content
+New version 2 of the `/api` available to support correct `content-type` headers for XML and JSON content
 
 See [change-note](/docs/api/v2) for more details
 
@@ -9,8 +9,6 @@ See [change-note](/docs/api/v2) for more details
 
 Method | Details
 ---|---|---
-`GET /bankaccount` | Return the status of the `/bankaccount` service - [more...](/docs/api/v2/bankaccount/sortcode) 
-`GET /bankaccount/{sortcode}` | Return details of a bank from the `{sortcode}` - [more...](/docs/api/v2/bankaccount/sortcode) 
-`GET /bankaccount/{sortcode}/{accountnumber}` | Return details of a bankaccount from the `{sortcode}` and `{accountnumber}` combination - [more...](/docs/api/v2/bankaccount/sortcode/accountnumber) 
-`GET /identity` | Return the status of the `/identity` service - [more...](/docs/api/v2/identity) 
-`GET /catalogue` | Return the status of the `/catalogue` service - [more...](/docs/api/v2/catalogue) 
+`GET /bankaccount` | Details on banks and bank accounts - [more details](/docs/api/v2/bankaccount) 
+`GET /identity` |  Providing simple user/password account service - [more details](/docs/api/v2/identity) 
+`GET /catalogue` | Details of British Library catalogue metadata - [more details](/docs/api/v2/catalogue) 
