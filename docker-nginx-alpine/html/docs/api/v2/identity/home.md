@@ -6,12 +6,10 @@
 
 Return the status of the `/identity` service
 
-### Examples: 
+### Example: The `/identity` service is available
 
 [curl -i localhost/api/v2/identity](/api/v2/identity)
 
-
-### Return:
 ```html
 HTTP/1.1 200 OK
 Server: nginx

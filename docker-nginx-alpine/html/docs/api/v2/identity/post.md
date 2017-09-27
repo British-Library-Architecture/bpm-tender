@@ -6,12 +6,10 @@
 
 Create an  `/identity` resource
 
-### Examples: 
+### Example: Create a new `identity` resource
 
 [curl -i -X POST localhost/api/v2/identity/newuser/newpasword](/api/v2/identity)
 
-
-### Return:
 ```html
 HTTP/1.1 201 Created
 Server: nginx
