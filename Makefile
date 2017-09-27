@@ -127,10 +127,10 @@ help:
 test: test-v1 test-v2
 	@echo ">>> Test complete"
 
-test-v1: test-api-v1 test-bankaccount-v1 test-identity test-catalogue
+test-v1: test-api-v1 test-bankaccount-v1 test-identity-v1 test-catalogue-v1
 	@echo ">>> Test complete"
 
-test-v2: test-api-v2 test-bankaccount-v2 test-identity test-catalogue
+test-v2: test-api-v2 test-bankaccount-v2 test-identity-v2 test-catalogue-v2
 	@echo ">>> Test complete"
 
 test-api-v1:
@@ -165,19 +165,27 @@ test-bankaccount-v2:
 	$(HTTP_TEST) $(HOST)/api/v2/bankaccount/200415/38290009       $(HTTP_404)
 	@echo ">>> Complete: $@"
 
-test-identity:
+test-identity-v1:
 	@echo ">>> Test: $@"
 	$(HTTP_TEST) $(HOST)/api/v1/identity                          $(HTTP_200)
-
 	$(HTTP_TEST) $(HOST)/api/v1/identity/baduser                  $(HTTP_404)
-
 	$(HTTP_TEST) $(HOST)/api/v1/identity/newuser/secret1234       $(HTTP_201) POST
 	$(HTTP_TEST) $(HOST)/api/v1/identity/newuser                  $(HTTP_200)
 	$(HTTP_TEST) $(HOST)/api/v1/identity/newuser/secret1234       $(HTTP_200)
 	$(HTTP_TEST) $(HOST)/api/v1/identity/newuser/wrong            $(HTTP_404)
 	@echo ">>> Complete: $@"
 
-test-catalogue:
+test-identity-v2:
+	@echo ">>> Test: $@"
+	$(HTTP_TEST) $(HOST)/api/v2/identity                          $(HTTP_200)
+	$(HTTP_TEST) $(HOST)/api/v2/identity/baduser                  $(HTTP_404)
+	$(HTTP_TEST) $(HOST)/api/v2/identity/newuser/secret1234       $(HTTP_201) POST
+	$(HTTP_TEST) $(HOST)/api/v2/identity/newuser                  $(HTTP_200)
+	$(HTTP_TEST) $(HOST)/api/v2/identity/newuser/secret1234       $(HTTP_200)
+	$(HTTP_TEST) $(HOST)/api/v2/identity/newuser/wrong            $(HTTP_404)
+	@echo ">>> Complete: $@"
+
+test-catalogue-v1:
 	@echo ">>> Test: $@"
 	$(HTTP_TEST) $(HOST)/api/v1/catalogue                         $(HTTP_200)
 	$(HTTP_TEST) $(HOST)/api/v1/catalogue/isbn                    $(HTTP_404)
@@ -187,6 +195,15 @@ test-catalogue:
 	$(HTTP_TEST) $(HOST)/api/v1/catalogue/isbn/ABCDEFG            $(HTTP_400)
 	@echo ">>> Complete: $@"
 
+test-catalogue-v2:
+	@echo ">>> Test: $@"
+	$(HTTP_TEST) $(HOST)/api/v2/catalogue                         $(HTTP_200)
+	$(HTTP_TEST) $(HOST)/api/v2/catalogue/isbn                    $(HTTP_404)
+	$(HTTP_TEST) $(HOST)/api/v2/catalogue/isbn/                   $(HTTP_404)
+	$(HTTP_TEST) $(HOST)/api/v2/catalogue/isbn/12345678           $(HTTP_404)
+	$(HTTP_TEST) $(HOST)/api/v2/catalogue/isbn/9780224063784      $(HTTP_200)
+	$(HTTP_TEST) $(HOST)/api/v2/catalogue/isbn/ABCDEFG            $(HTTP_400)
+	@echo ">>> Complete: $@"
 
 #
 #
