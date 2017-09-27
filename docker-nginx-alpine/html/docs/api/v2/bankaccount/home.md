@@ -1,4 +1,4 @@
-home[home](/home) | [bankaccount](/docs/api/v2/bankaccount)
+[home](/home) | [bankaccount](/docs/api/v2/bankaccount)
 
 ## /bankaccount
 

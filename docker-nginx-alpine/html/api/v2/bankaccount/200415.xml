@@ -1,0 +1,16 @@
+<result>
+<sort_code>200415</sort_code>
+<country>GB</country>
+<bank_name>BARCLAYS BANK PLC</bank_name>
+<bank_bic>BARCGB2108L</bank_bic>
+<chaps_bic>BARCGB22</chaps_bic>
+<bank_address>Dept AC Barclaycard House</bank_address>
+<bank_city>Northampton</bank_city>
+<bank_postalcode>NN4 7SG</bank_postalcode>
+<bank_phone>01604 234234</bank_phone>
+<direct_debits>NO</direct_debits>
+<pfs_payments>YES</pfs_payments>
+<chaps>YES</chaps>
+<bacs>YES</bacs>
+<ccc_payments>NO</ccc_payments>
+</result>
