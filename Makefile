@@ -124,23 +124,34 @@ help:
 # Test harness
 #
 
-test: test-api test-bankaccount test-identity test-catalogue
+test: test-api test-bankaccount-v1 test-bankaccount-v2 test-identity test-catalogue
 	@echo ">>> Test complete"
 
 test-api:
 	@echo ">>> Test: $@"
 	$(HTTP_TEST) $(HOST)/api                                      $(HTTP_200)
-	$(HTTP_TEST) $(HOST)/api/v1                                   $(HTTP_403)
+	$(HTTP_TEST) $(HOST)/api/v1                                   $(HTTP_200)
+	$(HTTP_TEST) $(HOST)/api/v2                                   $(HTTP_200)
 	@echo ">>> Complete: $@"
 
-test-bankaccount:
+test-bankaccount-v1:
 	@echo ">>> Test: $@"
 	$(HTTP_TEST) $(HOST)/api/v1/bankaccount                       $(HTTP_200)
-	$(HTTP_TEST) $(HOST)/api/v1/bankaccount/200415                $(HTTP_403)
+	$(HTTP_TEST) $(HOST)/api/v1/bankaccount/200415                $(HTTP_200)
 	$(HTTP_TEST) $(HOST)/api/v1/bankaccount/200415/38290008       $(HTTP_200)
 	$(HTTP_TEST) $(HOST)/api/v1/bankaccount/200415/38290008.json  $(HTTP_200)
 	$(HTTP_TEST) $(HOST)/api/v1/bankaccount/200415/38290008.xml   $(HTTP_200)
 	$(HTTP_TEST) $(HOST)/api/v1/bankaccount/200415/38290009       $(HTTP_404)
+	@echo ">>> Complete: $@"
+
+test-bankaccount-v2:
+	@echo ">>> Test: $@"
+	$(HTTP_TEST) $(HOST)/api/v2/bankaccount                       $(HTTP_200)
+	$(HTTP_TEST) $(HOST)/api/v2/bankaccount/200415                $(HTTP_200)
+	$(HTTP_TEST) $(HOST)/api/v2/bankaccount/200415/38290008       $(HTTP_200)
+	$(HTTP_TEST) $(HOST)/api/v2/bankaccount/200415/38290008.json  $(HTTP_200)
+	$(HTTP_TEST) $(HOST)/api/v2/bankaccount/200415/38290008.xml   $(HTTP_200)
+	$(HTTP_TEST) $(HOST)/api/v2/bankaccount/200415/38290009       $(HTTP_404)
 	@echo ">>> Complete: $@"
 
 test-identity:
