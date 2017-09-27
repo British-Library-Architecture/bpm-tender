@@ -45,7 +45,7 @@ Accept-Ranges: bytes
 ```
 
 ### Alternative
-Return JSON: [curl -i /api/v2/bankaccount/200415/38290008.json](/api/v2/bankaccount/200415/38290008.json)
+Return JSON: [curl -i localhost/api/v2/bankaccount/200415/38290008.json](/api/v2/bankaccount/200415/38290008.json)
 
 ```json
 HTTP/1.1 200 OK
