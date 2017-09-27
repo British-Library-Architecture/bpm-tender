@@ -4,11 +4,11 @@
 
 `GET /api/v2/catalogue/isbn/{isbn}`
 
-Return metadata details of a catalogue by the `{isbn}` reference
+Return metadata details of a catalogue by the `{isbn}` reference where an ISBN is a 13 digit numeric value
 
 ### Examples: 
 
-[curl -i /api/v2/catalogue/isbn/9780224063784](/api/v2/catalogue/isbn/9780224063784)
+[curl -i localhost/api/v2/catalogue/isbn/9780224063784](/api/v2/catalogue/isbn/9780224063784)
 
 
 ### Return:
@@ -43,5 +43,6 @@ ETag: W/"13c-fza4Djc0qvbm3ZWO6Xi2RLtyj2Y"
 Status code|Result
 ---|---
 200|OK - Catalogue entry found
-403|Error - forbidden
+400|Error - Bad request. Typically the ISBN is invalid
+404|Error - Not found. ISBN not referenced in the catalogue
 500 or timeout|Error - `/catalogue` service failure. Not available

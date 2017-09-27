@@ -8,7 +8,7 @@ Return the status of the `/catalogue` service
 
 ### Examples: 
 
-[curl -i /api/v2/catalogue](/api/v2/catalogue)
+[curl -i localhost/api/v2/catalogue](/api/v2/catalogue)
 
 
 ### Return:

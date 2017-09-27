@@ -8,7 +8,7 @@ Create an  `/identity` resource
 
 ### Examples: 
 
-[curl -i -X POST /api/v2/identity/newuser/newpasword](/api/v2/identity)
+[curl -i -X POST localhost/api/v2/identity/newuser/newpasword](/api/v2/identity)
 
 
 ### Return:

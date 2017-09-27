@@ -8,7 +8,7 @@ Return the status of the `/bankaccount` service
 
 ### Examples: 
 
-[curl -i /api/v2/bankaccount](/api/v2/bankaccount)
+[curl -i localhost/api/v2/bankaccount](/api/v2/bankaccount)
 
 
 ### Return:

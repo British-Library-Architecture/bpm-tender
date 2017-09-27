@@ -1,4 +1,4 @@
-home[home](/home) | [identity](/docs/api/v2/identity)
+[home](/home) | [identity](/docs/api/v2/identity)
 
 ## /identity
 
@@ -8,7 +8,7 @@ Return the status of the `/identity` service
 
 ### Examples: 
 
-[curl -i /api/v2/identity](/api/v2/identity)
+[curl -i localhost/api/v2/identity](/api/v2/identity)
 
 
 ### Return:

@@ -4,5 +4,5 @@
 
 Method | Details
 ---|---|---
-`GET /catalogue` | Return the status of the `/catalogue` service - [more...](/docs/api/v2/catalogue) 
+`GET /catalogue` | Return the status of the `/catalogue` service - [more...](/docs/api/v2/catalogue/home) 
 `GET /catalogue/isbn/{isbn}` | Return catalogue details by the `{isbn}` reference - [more...](/docs/api/v2/catalogue/isbn) 

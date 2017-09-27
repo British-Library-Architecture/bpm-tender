@@ -8,9 +8,9 @@ Return the details of a bank `<sortcode>` and `<accountnumber>` combination
 
 ### Examples: 
 
-[curl -i /api/v2/bankaccount/200415/38290008](/api/v2/bankaccount/200415/38290008)
+[curl -i localhost/api/v2/bankaccount/200415/38290008](/api/v2/bankaccount/200415/38290008)
 
-[curl -i /api/v2/bankaccount/38290008.xml](/api/v2/bankaccount/200415/38290008.xml)
+[curl -i localhost/api/v2/bankaccount/38290008.xml](/api/v2/bankaccount/200415/38290008.xml)
 
 ### Return:
 ```xml

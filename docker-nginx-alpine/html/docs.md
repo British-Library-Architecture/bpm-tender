@@ -3,7 +3,7 @@
 ### Update - 27 Sept 2017
 New version 2 of the `/api` available to support correct `content-type` headers for XML and JSON content
 
-See [change-note](/docs/api/v2) for more details
+See [release notes](/docs/api/releasenotes/home) for more details
 
 # API Documentation
 
