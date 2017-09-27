@@ -16,6 +16,8 @@ console.log('Starting service endpoints');
 app.use('/api/v1/identity', require('./identity'));
 app.use('/api/v1/catalogue', require('./catalogue'));
 
+app.use('/api/v2/identity', require('./identity'));
+app.use('/api/v2/catalogue', require('./catalogue'));
 
 // Start the listener
 app.listen(PORT);
