@@ -1,8 +1,6 @@
-# British Library BPMN Tender 
+# Documentation
 
-## Useful links
-
+- [API documentation page](/docs)
 - [GitHub Page](https://github.com/British-Library-Architecture/bpm-tender)
-- [API sample page](/api/)
 - [Admin console](/admin)
 

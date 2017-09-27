@@ -124,13 +124,24 @@ help:
 # Test harness
 #
 
-test: test-api test-bankaccount-v1 test-bankaccount-v2 test-identity test-catalogue
+test: test-v1 test-v2
 	@echo ">>> Test complete"
 
-test-api:
+test-v1: test-api-v1 test-bankaccount-v1 test-identity test-catalogue
+	@echo ">>> Test complete"
+
+test-v2: test-api-v2 test-bankaccount-v2 test-identity test-catalogue
+	@echo ">>> Test complete"
+
+test-api-v1:
 	@echo ">>> Test: $@"
 	$(HTTP_TEST) $(HOST)/api                                      $(HTTP_200)
 	$(HTTP_TEST) $(HOST)/api/v1                                   $(HTTP_200)
+	@echo ">>> Complete: $@"
+
+test-api-v2:
+	@echo ">>> Test: $@"
+	$(HTTP_TEST) $(HOST)/api                                      $(HTTP_200)
 	$(HTTP_TEST) $(HOST)/api/v2                                   $(HTTP_200)
 	@echo ">>> Complete: $@"
 
