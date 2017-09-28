@@ -172,4 +172,4 @@ Response:
 Status code|Result
 ---|---
 200|OK - Response 
-500 or timeout|Error - `/identity` service failure. Not available
+500 or timeout|Error - Postcode service failure. Not available
