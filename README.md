@@ -1,6 +1,8 @@
 # bpm-tender
 Resources for the British Library BPM tender (2017) technical demonstration
 
+16 Jan 2017 - API v1
+
 ## Installation
 Ubuntu 16.04 and Mac OSX have been tested.
 
