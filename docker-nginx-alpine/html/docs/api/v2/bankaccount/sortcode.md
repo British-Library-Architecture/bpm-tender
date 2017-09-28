@@ -42,40 +42,6 @@ Accept-Ranges: bytes
 </result>
 ```
 
-### Alternative
-Return JSON: [curl -i localhost/api/v2/bankaccount/200415.json](/api/v2/bankaccount/200415.json)
-
-```json
-HTTP/1.1 200 OK
-Server: nginx
-Date: Wed, 27 Sep 2017 12:53:30 GMT
-Content-Type: application/json
-Content-Length: 435
-Last-Modified: Wed, 27 Sep 2017 11:02:41 GMT
-Connection: keep-alive
-ETag: "59cb8551-1b3"
-Accept-Ranges: bytes
-
-{
-  "result": {
-    "sort_code": "200415",
-    "country": "GB",
-    "bank_name": "BARCLAYS BANK PLC",
-    "bank_bic": "BARCGB2108L",
-    "chaps_bic": "BARCGB22",
-    "bank_address": "Dept AC Barclaycard House",
-    "bank_city": "Northampton",
-    "bank_postalcode": "NN4 7SG",
-    "bank_phone": "01604 234234",
-    "direct_debits": "NO",
-    "pfs_payments": "YES",
-    "chaps": "YES",
-    "bacs": "YES",
-    "ccc_payments": "NO"
-  }
-}
-```
-
 ### Result Codes
 Status code|Result
 ---|---
