@@ -1,7 +1,7 @@
 [home](/home)
 
 ### Update - 27 Sept 2017
-New version 2 of the `/api` available to support correct `content-type` headers for XML and JSON content
+New version 2 of the `/api` available to support correct `content-type` headers for XML and JSON content. [v2 release notes](/docs/releasenotes/v2)
 
 All the previous `/api/v1` resources remain unaltered and are still available to be used. [v1 documentation](/api/index.html)
 
