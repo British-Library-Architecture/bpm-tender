@@ -1,9 +1,9 @@
 [home](/home)
 
-### Update - 27 Sept 2017
-New version 2 of the `/api` available to support correct `content-type` headers for XML and JSON content
+***Update - 27 Sept 2017***
+New version 2 of the `/api` available to support correct `content-type` headers for XML and JSON content. See [v2 release notes](/docs/releasenotes/v2)
 
-All the previous `/api/v1` resources remain unaltered and are still available to be used. [v1 documentation](/api/index.html)
+All the previous `/api/v1` resources remain unaltered and are still available to be used. See [v1 documentation](/api/index.html)
 
 See [release notes](/docs/releasenotes) for more details
 
@@ -14,3 +14,5 @@ Method | Details
 `GET /bankaccount` | Details on banks and bank accounts - [more details](/docs/api/v2/bankaccount) 
 `GET /identity` |  Providing simple user/password account service - [more details](/docs/api/v2/identity) 
 `GET /catalogue` | Details of British Library catalogue metadata - [more details](/docs/api/v2/catalogue) 
+Postcode lookup service | Provide simple GB postcode to address lookup - [more details](/docs/api/v2/postcode)
+
