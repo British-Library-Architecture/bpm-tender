@@ -1,4 +1,4 @@
-[home](/home)
+[home](/home) | [news](/docs/news) | [release notes](/docs/releasenotes)
 
 ***29 Sept 2017*** - v2.1 released
 
