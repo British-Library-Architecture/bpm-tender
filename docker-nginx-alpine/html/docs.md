@@ -1,6 +1,7 @@
 [home](/home) | [news](/docs/news) | [release notes](/docs/releasenotes)
 
-***29 Sept 2017 - Important changes to the API behaviour***
+## Important changes to the API behaviour
+***29 Sept 2017***
 
 Updates to `/api/v1` and `/api/v2`. See [v2.1 release notes](/docs/releasenotes/v2.1) for full details
 
