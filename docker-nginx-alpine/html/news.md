@@ -1,6 +1,4 @@
-[home](/home) | [release notes](/docs/releasenotes)
-
-#  Release notes
+[home](/home)
 
 ***29 Sept 2017*** - v2.1 released
 
@@ -16,8 +14,11 @@
 > The `/bankaccount` API was intended to replicate legacy API's that are used within the British Library, and to simulate the similar functional requirements and behaviours. In order to ensure that the vendor submissions can support this style of interface, the JSON endpoint has been withdrawn.
 > The `.json` feature was included to `/api/v2` in error and apologies for any confusion this incurred.
 
-### Detailed change log
-- `/bankaccount` ONLY supports XML responses
-  - Removed `.json` to the URI on both v1 and v2 API's
-- `/catalogue` - no changes
-- `/identity` - no changes
+***27 Sept 2017*** - v2 released
+
+New version 2 of the `/api` available to support correct `content-type` headers for XML and JSON content. See [v2 release notes](/docs/releasenotes/v2)
+
+All the previous `/api/v1` resources remain unaltered and are still available to be used. See [v1 documentation](/api/index.html)
+
+See [release notes](/docs/releasenotes) for more details
+

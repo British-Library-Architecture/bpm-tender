@@ -1,12 +1,10 @@
-[home](/home)
+[home](/home) | [news](/news) | [release notes](/releasenotes)
 
-***Update - 27 Sept 2017***
+***29 Sept 2017***
 
-New version 2 of the `/api` available to support correct `content-type` headers for XML and JSON content. See [v2 release notes](/docs/releasenotes/v2)
+Update to `/api/v1` and `/api/v2` to remove JSON responses from the `/bankaccount` service. See [v2.1 release notes](/docs/releasenotes/v2.1)
 
-All the previous `/api/v1` resources remain unaltered and are still available to be used. See [v1 documentation](/api/index.html)
-
-See [release notes](/docs/releasenotes) for more details
+See [release note history](/docs/releasenotes) for previous changes. See [news](/docs/news) for previous announcements
 
 # API Documentation
 
