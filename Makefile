@@ -58,7 +58,7 @@ build$(FLAG): install$(FLAG)
 	@echo $@
 	touch build$(FLAG)
 
-rebuild: stop build start
+rebuild: stop build start test
 
 #
 # Start / Stop
@@ -67,9 +67,10 @@ start: start-docker
 
 start-docker:
 	$(info Starting containers)
-#	nohup docker-compose up &
-	docker-compose up
-#	sleep 3
+	nohup docker-compose up &
+#	docker-compose up
+	sleep 3
+
 
 stop: stop-docker
 
