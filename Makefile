@@ -149,9 +149,12 @@ test-bankaccount-v1:
 	@echo ">>> Test: $@"
 	$(HTTP_TEST) $(HOST)/api/v1/bankaccount                       $(HTTP_200)
 	$(HTTP_TEST) $(HOST)/api/v1/bankaccount/200415                $(HTTP_200)
+	$(HTTP_TEST) $(HOST)/api/v1/bankaccount/200415.xml            $(HTTP_200)
+	$(HTTP_TEST) $(HOST)/api/v1/bankaccount/200415.json           $(HTTP_404)
+	$(HTTP_TEST) $(HOST)/api/v1/bankaccount/200416                $(HTTP_404)
 	$(HTTP_TEST) $(HOST)/api/v1/bankaccount/200415/38290008       $(HTTP_200)
-	$(HTTP_TEST) $(HOST)/api/v1/bankaccount/200415/38290008.json  $(HTTP_200)
 	$(HTTP_TEST) $(HOST)/api/v1/bankaccount/200415/38290008.xml   $(HTTP_200)
+	$(HTTP_TEST) $(HOST)/api/v1/bankaccount/200415/38290008.json  $(HTTP_404)	
 	$(HTTP_TEST) $(HOST)/api/v1/bankaccount/200415/38290009       $(HTTP_404)
 	@echo ">>> Complete: $@"
 
@@ -159,9 +162,12 @@ test-bankaccount-v2:
 	@echo ">>> Test: $@"
 	$(HTTP_TEST) $(HOST)/api/v2/bankaccount                       $(HTTP_200)
 	$(HTTP_TEST) $(HOST)/api/v2/bankaccount/200415                $(HTTP_200)
+	$(HTTP_TEST) $(HOST)/api/v2/bankaccount/200415.xml            $(HTTP_200)
+	$(HTTP_TEST) $(HOST)/api/v2/bankaccount/200415.json           $(HTTP_404)
+	$(HTTP_TEST) $(HOST)/api/v2/bankaccount/200416                $(HTTP_404)
 	$(HTTP_TEST) $(HOST)/api/v2/bankaccount/200415/38290008       $(HTTP_200)
-	$(HTTP_TEST) $(HOST)/api/v2/bankaccount/200415/38290008.json  $(HTTP_200)
 	$(HTTP_TEST) $(HOST)/api/v2/bankaccount/200415/38290008.xml   $(HTTP_200)
+	$(HTTP_TEST) $(HOST)/api/v2/bankaccount/200415/38290008.json  $(HTTP_404)	
 	$(HTTP_TEST) $(HOST)/api/v2/bankaccount/200415/38290009       $(HTTP_404)
 	@echo ">>> Complete: $@"
 
