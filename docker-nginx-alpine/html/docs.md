@@ -1,4 +1,4 @@
-[home](/home) | [news](/news) | [release notes](/releasenotes)
+[home](/home) | [news](/docs/news) | [release notes](/docs/releasenotes)
 
 ***29 Sept 2017 - Important changes to the API behaviour***
 
