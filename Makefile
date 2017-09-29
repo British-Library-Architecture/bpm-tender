@@ -9,9 +9,15 @@ HTTP_400 = "HTTP/1.1 400"
 HTTP_403 = "HTTP/1.1 403"
 HTTP_404 = "HTTP/1.1 404"
 
+CONTENT_TYPE_TEXT_HTML 			= "Content-Type: text\/html"
+CONTENT_TYPE_TEXT_XML 			= "Content-Type: text\/xml"
+CONTENT_TYPE_APPLICATION_XML 	= "Content-Type: application\/xml"
+CONTENT_TYPE_APPLICATION_JSON 	= "Content-Type: application\/json"
+
 CURL = curl -siL
 GREP = grep
-HTTP_TEST = /bin/bash ./bin/test-http-status
+#HTTP_TEST = /bin/bash ./bin/test-http-status
+HTTP_TEST = /bin/bash ./bin/test-http-response
 
 FLAG = .flag
 
@@ -66,6 +72,9 @@ rebuild: stop build start test
 start: start-docker
 
 start-docker:
+	docker-compose up
+
+start-docker-background:
 	$(info Starting containers)
 	nohup docker-compose up &
 #	docker-compose up
@@ -128,24 +137,25 @@ help:
 #
 
 test: test-v1 test-v2
-	@echo ">>> Test complete"
+	@echo ">>> Test $@ complete"
 
-test-v1: test-api-v1 test-bankaccount-v1 test-identity-v1 test-catalogue-v1
-	@echo ">>> Test complete"
+test-v1: test-api-v1 test-bankaccount-v1 test-bankaccount-v1-content-type test-identity-v1 test-catalogue-v1
+	@echo ">>> Test $@ complete"
 
-test-v2: test-api-v2 test-bankaccount-v2 test-identity-v2 test-catalogue-v2
-	@echo ">>> Test complete"
+test-v2: test-api-v2 test-bankaccount-v2 test-bankaccount-v2-content-type test-identity-v2 test-catalogue-v2
+	@echo ">>> Test $@ complete"
 
 test-api-v1:
 	@echo ">>> Test: $@"
 	$(HTTP_TEST) $(HOST)/api                                      $(HTTP_200)
 	$(HTTP_TEST) $(HOST)/api/v1                                   $(HTTP_200)
+	$(HTTP_TEST) $(HOST)/api/v1                                   $(CONTENT_TYPE_TEXT_XML)
 	@echo ">>> Complete: $@"
 
 test-api-v2:
 	@echo ">>> Test: $@"
-	$(HTTP_TEST) $(HOST)/api                                      $(HTTP_200)
 	$(HTTP_TEST) $(HOST)/api/v2                                   $(HTTP_200)
+	$(HTTP_TEST) $(HOST)/api/v2                                   $(CONTENT_TYPE_TEXT_XML)
 	@echo ">>> Complete: $@"
 
 test-bankaccount-v1:
@@ -161,6 +171,19 @@ test-bankaccount-v1:
 	$(HTTP_TEST) $(HOST)/api/v1/bankaccount/200415/38290009       $(HTTP_404)
 	@echo ">>> Complete: $@"
 
+test-bankaccount-v1-content-type:
+	@echo ">>> Test: $@"
+	$(HTTP_TEST) $(HOST)/api/v1/bankaccount                       $(CONTENT_TYPE_TEXT_XML)
+	$(HTTP_TEST) $(HOST)/api/v1/bankaccount/200415                $(CONTENT_TYPE_TEXT_XML)
+	$(HTTP_TEST) $(HOST)/api/v1/bankaccount/200415.xml            $(CONTENT_TYPE_TEXT_XML)
+	$(HTTP_TEST) $(HOST)/api/v1/bankaccount/200415.json           $(CONTENT_TYPE_TEXT_HTML)
+	$(HTTP_TEST) $(HOST)/api/v1/bankaccount/200416                $(CONTENT_TYPE_TEXT_HTML)
+	$(HTTP_TEST) $(HOST)/api/v1/bankaccount/200415/38290008       $(CONTENT_TYPE_TEXT_XML)
+	$(HTTP_TEST) $(HOST)/api/v1/bankaccount/200415/38290008.xml   $(CONTENT_TYPE_TEXT_XML)
+	$(HTTP_TEST) $(HOST)/api/v1/bankaccount/200415/38290008.json  $(CONTENT_TYPE_TEXT_HTML)	
+	$(HTTP_TEST) $(HOST)/api/v1/bankaccount/200415/38290009       $(CONTENT_TYPE_TEXT_HTML)
+	@echo ">>> Complete: $@"
+
 test-bankaccount-v2:
 	@echo ">>> Test: $@"
 	$(HTTP_TEST) $(HOST)/api/v2/bankaccount                       $(HTTP_200)
@@ -172,6 +195,19 @@ test-bankaccount-v2:
 	$(HTTP_TEST) $(HOST)/api/v2/bankaccount/200415/38290008.xml   $(HTTP_200)
 	$(HTTP_TEST) $(HOST)/api/v2/bankaccount/200415/38290008.json  $(HTTP_404)	
 	$(HTTP_TEST) $(HOST)/api/v2/bankaccount/200415/38290009       $(HTTP_404)
+	@echo ">>> Complete: $@"
+
+test-bankaccount-v2-content-type:
+	@echo ">>> Test: $@"
+	$(HTTP_TEST) $(HOST)/api/v2/bankaccount                       $(CONTENT_TYPE_TEXT_XML)
+	$(HTTP_TEST) $(HOST)/api/v2/bankaccount/200415                $(CONTENT_TYPE_TEXT_XML)
+	$(HTTP_TEST) $(HOST)/api/v2/bankaccount/200415.xml            $(CONTENT_TYPE_TEXT_XML)
+	$(HTTP_TEST) $(HOST)/api/v2/bankaccount/200415.json           $(CONTENT_TYPE_TEXT_HTML)
+	$(HTTP_TEST) $(HOST)/api/v2/bankaccount/200416                $(CONTENT_TYPE_TEXT_HTML)
+	$(HTTP_TEST) $(HOST)/api/v2/bankaccount/200415/38290008       $(CONTENT_TYPE_TEXT_XML)
+	$(HTTP_TEST) $(HOST)/api/v2/bankaccount/200415/38290008.xml   $(CONTENT_TYPE_TEXT_XML)
+	$(HTTP_TEST) $(HOST)/api/v2/bankaccount/200415/38290008.json  $(CONTENT_TYPE_TEXT_HTML)	
+	$(HTTP_TEST) $(HOST)/api/v2/bankaccount/200415/38290009       $(CONTENT_TYPE_TEXT_HTML)
 	@echo ">>> Complete: $@"
 
 test-identity-v1:

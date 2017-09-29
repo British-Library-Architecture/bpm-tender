@@ -1,0 +1,26 @@
+#!/bin/bash
+
+SITE=$1
+TEST=$2
+METHOD=${3:-GET}
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m' # No Color
+
+SITE_CURL=/tmp/check.tmp
+
+curl -sILNX $METHOD  --stderr - $1 > $SITE_CURL;
+SITE_STATUS=$(cat $SITE_CURL | grep "$TEST")
+
+if [[ $SITE_STATUS ]]
+then
+    echo -e "${GREEN}Passed${NC} - $SITE - $SITE_STATUS";
+else
+    echo -e "${RED}Failed${NC} - $SITE";
+    echo -e "Expected: $TEST";
+    echo -e "Result:   $SITE_STATUS";
+    cat $SITE_CURL
+fi
+
+rm $SITE_CURL
