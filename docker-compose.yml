@@ -5,7 +5,7 @@ services:
       "./docker-nginx-alpine"
     links: 
         - node1:node1
-        - portainer:portainer
+#        - portainer:portainer
     ports: 
         - "80:80"
         - "8000:80"
