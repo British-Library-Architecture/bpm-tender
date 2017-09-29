@@ -69,8 +69,10 @@ start-docker:
 	$(info Starting containers)
 	nohup docker-compose up &
 #	docker-compose up
-	sleep 3
-
+	$(info Waiting for the containers to complete startup)
+	sleep 10
+	cat nohup.out
+	$(info Containers should be started...)
 
 stop: stop-docker
 
