@@ -1,6 +1,6 @@
 [home](/home)
 
-***29 Sept 2017*** - v2.1 released
+***3 Oct 2017*** - v2.1 released
 
 - Updates to `/api/v1` and `/api/v2` to remove JSON responses from the `/bankaccount` service. See [v2.1 release notes](/docs/releasenotes/v2.1)
   - `/api/v1/bankaccount/200415.json` removed. Future access will result in `404 Not Found` responses.
