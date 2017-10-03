@@ -1,10 +1,11 @@
-[home](/home) | [news](/news) | [release notes](/releasenotes)
+[home](/home) | [news](/docs/news) | [release notes](/docs/releasenotes)
 
 ***3 Oct 2017 - Important update to the API specification***
 
-Updates have been made to `/api/v1` and `/api/v2` to remove JSON responses from the `/bankaccount` service and to use the required `content-type` for the XML content. See [v2.1 release notes](/docs/releasenotes/v2.1)
+Updates to `/api/v1` and `/api/v2`. See [v2.1 release notes](/docs/releasenotes/v2.1) for full details
 
-See [release note history](/docs/releasenotes) for previous changes. See [news](/docs/news) for previous announcements
+- See [release note history](/docs/releasenotes) for previous changes. 
+- See [news](/docs/news) for previous news announcements
 
 # API Documentation
 

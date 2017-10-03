@@ -1,4 +1,4 @@
-[home](/home) | [release notes](/docs/releasenotes)
+[home](/home) | [news](/docs/news) | [release notes](/docs/releasenotes)
 
 # Release Notes Summary
 
